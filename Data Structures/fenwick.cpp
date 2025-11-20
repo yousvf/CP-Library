@@ -35,5 +35,4 @@ struct FenwickTree {
 
 		return pos + 1;
 	}
-
 };
