@@ -17,7 +17,7 @@ struct FenwickTree {
 	}
 
 	void update(int idx, int delta) {
-		while(idx < N) {
+		while(idx < n) {
 			bit[idx] += delta;
 			idx += (idx & -idx);
 		}
@@ -27,7 +27,7 @@ struct FenwickTree {
 		int sum = 0, pos = 0;
 		for(int i = LOG; i >= 0; i--) {
 			int x = pos + (1LL << i);
-			if(x < N && sum + bit[x] < val) {
+			if(x < n && sum + bit[x] < val) {
 				sum += bit[x];
 				pos += (1LL << i);
 			}
@@ -35,4 +35,5 @@ struct FenwickTree {
 
 		return pos + 1;
 	}
+
 };
