@@ -35,6 +35,7 @@ struct Hash {
 	}
 	
 	bool isPalindrome(int l, int r) {
-		return get(l, r, pre) == get(n - r + 1, n - l + 1, suf);
+		return get(l, r, pre) == get(n - r - 1, n - l - 1, suf);
 	}
+
 };
